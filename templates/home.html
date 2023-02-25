@@ -1,1 +1,35 @@
-<h1>Hello World!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML API</title>
+</head>
+<body>
+    <div class="login">
+        <h1>Boston House Price Prediction</h1>
+
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="CRIM" placeholder="CRIM" required><br>
+            <input type="text" name="ZN" placeholder="ZN" required><br>
+            <input type="text" name="INDUS" placeholder="INDUS" required><br>
+            <input type="text" name="CHAS" placeholder="CRHAS" required><br>
+            <input type="text" name="NOX" placeholder="ZOX" required><br>
+            <input type="text" name="RM" placeholder="RM" required><br>
+            <input type="text" name="Age" placeholder="Age" required><br>
+            <input type="text" name="DIS" placeholder="DIS" required><br>
+            <input type="text" name="RAD" placeholder="RAD" required><br>
+            <input type="text" name="TAX" placeholder="TAX" required><br>
+            <input type="text" name="PTRATIO" placeholder="PTRATIO" required><br>
+            <input type="text" name="B" placeholder="B" required><br>
+            <input type="text" name="LSTAT" placeholder="LSTAT" required><br>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    {{prediction_text}}
+</body>
+</html>
