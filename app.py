@@ -1,12 +1,13 @@
-import pickle
+# import pickle
+import joblib
 from flask import Flask,request,app,jsonify,url_for,render_template
 import numpy as np
 import pandas as pd
 
 app=Flask(__name__)
 ## Load the model
-regmodel=pickle.load(open('model.pkl','rb'))
-scaler = pickle.load(open('scaling.pkl','rb'))
+regmodel=joblib.load(open('model.pkl','rb'))
+scaler = joblib.load(open('scaling.pkl','rb'))
 
 
 @app.route('/')
