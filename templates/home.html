@@ -5,31 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML API</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .page{
+            border: 2px sandybrown solid;
+            padding: 25px;
+            height: 450px;
+        }
+        .info{
+            width: 45%;
+            height: 400px;
+            border: 1px solid;
+            float: left;
+        }
+        .data{
+            width: 45%;
+            height: 400px;
+            border: 1px solid;
+            float: right;
+        }
+        #result{
+            color: coral;
+            padding: 100px;
+        }
+        
+    </style>
 </head>
 <body>
-    <div class="login">
-        <h1>Boston House Price Prediction</h1>
+    <div class="page">
 
-        <form action="{{ url_for('predict')}}" method="post">
-            <input type="text" name="CRIM" placeholder="CRIM" required><br>
-            <input type="text" name="ZN" placeholder="ZN" required><br>
-            <input type="text" name="INDUS" placeholder="INDUS" required><br>
-            <input type="text" name="CHAS" placeholder="CRHAS" required><br>
-            <input type="text" name="NOX" placeholder="ZOX" required><br>
-            <input type="text" name="RM" placeholder="RM" required><br>
-            <input type="text" name="Age" placeholder="Age" required><br>
-            <input type="text" name="DIS" placeholder="DIS" required><br>
-            <input type="text" name="RAD" placeholder="RAD" required><br>
-            <input type="text" name="TAX" placeholder="TAX" required><br>
-            <input type="text" name="PTRATIO" placeholder="PTRATIO" required><br>
-            <input type="text" name="B" placeholder="B" required><br>
-            <input type="text" name="LSTAT" placeholder="LSTAT" required><br>
+        <div class="info">
+            <h3>Data Features</h3>
+            CRIM--->per capita crime rate by town.<br>  
+            ZN--->proportion of residential land zoned for lots over 25,000 sq.ft.<br>      
+            INDUS--->proportion of non-retail business acres per town.<br>
+            CHAS--->Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)<br>
+            NOX--->nitric oxides concentration (parts per 10 million)<br>
+            RM--->average number of rooms per dwelling<br>
+            AGE--->proportion of owner-occupied units built prior to 1940<br>
+            DIS--->weighted distances to five Boston employment centres<br>
+            RAD--->index of accessibility to radial highways<br>
+            TAX--->full-value property-tax rate per $10,000<br>
+            PTRATIO--->pupil-teacher ratio by town<br>
+            B--->1000(Bk - 0.63)^2 where Bk is the proportion of black people by town<br>
+            LSTAT--->% lower status of the population<br>
+            MEDV--->Median value of owner-occupied homes in $1000's<br>
+            
+        </div>
+        <div class="data">
+            <h3>Boston House Price Prediction</h3>
+    
+            <form action="{{ url_for('predict')}}" method="post">
+                <input type="text" name="CRIM" placeholder="CRIM" required><br>
+                <input type="text" name="ZN" placeholder="ZN" required><br>
+                <input type="text" name="INDUS" placeholder="INDUS" required><br>
+                <input type="text" name="CHAS" placeholder="CRHAS" required><br>
+                <input type="text" name="NOX" placeholder="ZOX" required><br>
+                <input type="text" name="RM" placeholder="RM" required><br>
+                <input type="text" name="Age" placeholder="Age" required><br>
+                <input type="text" name="DIS" placeholder="DIS" required><br>
+                <input type="text" name="RAD" placeholder="RAD" required><br>
+                <input type="text" name="TAX" placeholder="TAX" required><br>
+                <input type="text" name="PTRATIO" placeholder="PTRATIO" required><br>
+                <input type="text" name="B" placeholder="B" required><br>
+                <input type="text" name="LSTAT" placeholder="LSTAT" required><br>
+    
+                <button type="submit">Predict</button>
+            </form>
+        </div>
 
-            <button type="submit">Predict</button>
-        </form>
+        <br>
+        <br>
+        <h2 id="result">{{prediction_text}}</h2>
+
     </div>
-    <br>
-    <br>
-    {{prediction_text}}
+    
+    
 </body>
 </html>
