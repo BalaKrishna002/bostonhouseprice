@@ -79,7 +79,13 @@
 
         <br>
         <br>
+        {% if status==-1 %}
+        <script>
+            alert("Error:Enter only integers");
+        </script>
+        {% else %}
         <h2 id="result">{{prediction_text}}</h2>
+        {% endif %}
 
     </div>
     
