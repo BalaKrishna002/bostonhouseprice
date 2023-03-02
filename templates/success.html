@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        .main{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 2px solid grey;
+            width: 40%;
+            border-radius: 10px;
+            box-shadow: 5px 10px 18px #888888;
+            background-color: white;
+        }
+        .header{
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid grey;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        .body{
+            padding: 10px 15px;
+        }
+        button{
+            position: relative;
+            left: 400px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="main" >
+        <div class="header">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="body">
+            <h3>The house price is {{text}}!!</h3>
+            <a href="{{url_for('home')}}"><button class="btn btn-primary">Back</button></a>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
