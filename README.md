@@ -38,6 +38,13 @@ Boston house prices dataset
         - LSTAT    % lower status of the population
         - MEDV     Median value of owner-occupied homes in $1000's
  **Dataset can be download from [UCI repositeroy](https://archive.ics.uci.edu/ml/machine-learning-databases/housing/)**
+                  **or can be used from scikit-learn library datasets**
+      ```
+      from sklearn.datasets import load_boston
+      boston = load_boston()
+      dataset = pd.DataFrame(boston.data,columns=boston.feature_names)
+      dataset["Price"]=boston.target
+      ```
 
 
 ## Website link
