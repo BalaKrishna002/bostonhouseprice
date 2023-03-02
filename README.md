@@ -45,7 +45,17 @@ boston = load_boston()
 dataset = pd.DataFrame(boston.data,columns=boston.feature_names)
 dataset["Price"]=boston.target
 ```
-
+## Machine Learning Model
+**scaled the data using standard scaler from sklearn**
+```
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+```
+**Regression Model**
+```
+from sklearn.linear_model import LinearRegression
+regression = LinearRegression()
+```
 
 ## Website link
 ```
