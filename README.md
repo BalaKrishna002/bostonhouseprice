@@ -37,6 +37,7 @@ Boston house prices dataset
         - B        1000(Bk - 0.63)^2 where Bk is the proportion of black people by town
         - LSTAT    % lower status of the population
         - MEDV     Median value of owner-occupied homes in $1000's
+ **Dataset can be download from [UCI repositeroy](https://archive.ics.uci.edu/ml/machine-learning-databases/housing/)**
 
 
 ## Website link
