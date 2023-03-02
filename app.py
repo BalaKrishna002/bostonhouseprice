@@ -27,13 +27,14 @@ def predict_api():
 def predict():
     try:
         data = [float(x) for x in request.form.values()]
+        print(data)
     except ValueError:
         return render_template('home.html',status=-1)
 
     final_input = scaler.transform(np.array(data).reshape(1,-1))
     print(final_input)
-    output=regmodel.predict(final_input)[0]
-    return render_template('home.html',status=1,prediction_text="The House price prediction is {}".format(output))
+    output=round(regmodel.predict(final_input)[0],3)
+    return render_template('success.html',title="House price:",text=output)
 
 if __name__=="__main__":
     app.run(debug=True)
